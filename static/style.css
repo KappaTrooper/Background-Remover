@@ -1,0 +1,73 @@
+/* Reset basic styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #f0f2f5, #ffffff);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Main Container */
+.container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+/* Header */
+h2 {
+    margin-bottom: 24px;
+    color: #333;
+    font-size: 24px;
+}
+
+/* File Input */
+input[type="file"] {
+    margin-bottom: 20px;
+    font-size: 16px;
+    padding: 10px;
+}
+
+/* Submit Button */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Optional: Responsive for mobile */
+@media (max-width: 480px) {
+    .container {
+        padding: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+}
