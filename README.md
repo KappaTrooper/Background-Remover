@@ -2,7 +2,7 @@
 
 A sleek, drag-and-drop powered web app to remove image backgrounds using AI — powered by [rembg](https://github.com/danielgatis/rembg) and Python Flask.
 
-![App UI](https://your-screenshot-url.com) <!-- Replace with your image URL -->
+![App UI](https://raw.githubusercontent.com/KappaTrooper/Background-Remover/refs/heads/main/Background%20Remover.png) <!-- Replace with your image URL -->
 
 ---
 
