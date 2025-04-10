@@ -19,7 +19,7 @@
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(20px);
     border-radius: 20px;
-    padding: 40px;
+    padding: 100px;
     max-width: 480px;
     width: 90%;
     text-align: center;
@@ -37,6 +37,7 @@
     font-size: 16px;
     color: #e0e0e0;
     margin-bottom: 28px;
+    padding-bottom: 2rem;
   }
   
   /* Drop Zone */
@@ -64,6 +65,7 @@
     margin-top: 14px;
     font-size: 14px;
     color: #dddddd;
+    padding-left: 2rem;
   }
   
   /* Animated Submit Button */
