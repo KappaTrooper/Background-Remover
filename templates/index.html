@@ -1,17 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Background Remover</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8" />
+  <title>Background Remover</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h2>Remove Background From Your Image</h2>
-        <form method="POST" enctype="multipart/form-data">
-            <input type="file" name="image" accept="image/*" required><br>
-            <button type="submit">Remove Background</button>
-        </form>
-    </div>
+  <div class="card">
+    <h1 class="title">Background Remover</h1>
+    <p class="subtitle">Upload or drop an image below to remove the background instantly.</p>
+
+    <form id="upload-form" method="POST" enctype="multipart/form-data">
+      <label for="file-input" class="drop-zone" id="drop-zone">
+        <span class="drop-text">📂 Drag & Drop or Click to Upload</span>
+        <input type="file" name="image" id="file-input" accept="image/*" required hidden>
+      </label>
+      <p id="file-name" class="file-name">No file selected</p>
+      <button type="submit" class="upload-btn">Remove Background</button>
+    </form>
+  </div>
+
+  <script>
+    const dropZone = document.getElementById('drop-zone');
+    const fileInput = document.getElementById('file-input');
+    const fileNameDisplay = document.getElementById('file-name');
+
+    dropZone.addEventListener('click', () => fileInput.click());
+
+    fileInput.addEventListener('change', () => {
+      if (fileInput.files.length > 0) {
+        fileNameDisplay.textContent = `Selected: ${fileInput.files[0].name}`;
+      }
+    });
+
+    dropZone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      dropZone.classList.add('dragover');
+    });
+
+    dropZone.addEventListener('dragleave', () => {
+      dropZone.classList.remove('dragover');
+    });
+
+    dropZone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropZone.classList.remove('dragover');
+
+      const files = e.dataTransfer.files;
+      if (files.length > 0) {
+        fileInput.files = files;
+        fileNameDisplay.textContent = `Selected: ${files[0].name}`;
+      }
+    });
+  </script>
 </body>
 </html>
